@@ -1,0 +1,149 @@
+[
+    {
+        "model": "students.course",
+        "pk": 1,
+        "fields": {
+            "name": "Математика",
+            "description": "Курс по математике"
+        }
+    },
+    {
+        "model": "students.course",
+        "pk": 2,
+        "fields": {
+            "name": "Физика",
+            "description": "Курс по физике"
+        }
+    },
+    {
+        "model": "students.course",
+        "pk": 3,
+        "fields": {
+            "name": "Химия",
+            "description": "Курс по химии"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "ivanivanov",
+            "first_name": "Иван",
+            "last_name": "Иванов",
+            "email": "ivan@example.com",
+            "password": "pbkdf2_sha256$260000$HkZ1KhY2NByP$2sgh2cKvRHzZjZoeB3D1tDe5mlptDBXsFbsO4/obd00=",
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "olgapetrova",
+            "first_name": "Ольга",
+            "last_name": "Петрова",
+            "email": "olga@example.com",
+            "password": "pbkdf2_sha256$260000$K7SgbTwRbmJl$MOhqGgWppog88Z3ynXL13ZVbTqxCZq1tjd0I2PvUq4Q=",
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "username": "dmitrysmirnov",
+            "first_name": "Дмитрий",
+            "last_name": "Смирнов",
+            "email": "dmitry@example.com",
+            "password": "pbkdf2_sha256$260000$TkgqmvBfwfL8$ts0PtUm1OeOSoLgLpe2HR0jKdfzt3RUh7ZThjiOwCZo=",
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false
+        }
+    },
+    {
+        "model": "students.student",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "full_name": "Иван Иванов",
+            "date_of_birth": "2000-01-01"
+        }
+    },
+    {
+        "model": "students.student",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "full_name": "Ольга Петрова",
+            "date_of_birth": "1999-04-15"
+        }
+    },
+    {
+        "model": "students.student",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "full_name": "Дмитрий Смирнов",
+            "date_of_birth": "2001-08-30"
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 1,
+        "fields": {
+            "student": 1,
+            "course": 1,
+            "grade": 4.5
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 2,
+        "fields": {
+            "student": 1,
+            "course": 2,
+            "grade": 5.0
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 3,
+        "fields": {
+            "student": 2,
+            "course": 1,
+            "grade": 3.7
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 4,
+        "fields": {
+            "student": 2,
+            "course": 3,
+            "grade": 4.0
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 5,
+        "fields": {
+            "student": 3,
+            "course": 2,
+            "grade": 4.3
+        }
+    },
+    {
+        "model": "students.grade",
+        "pk": 6,
+        "fields": {
+            "student": 3,
+            "course": 3,
+            "grade": 4.8
+        }
+    }
+]

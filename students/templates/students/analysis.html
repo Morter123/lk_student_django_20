@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Анализ данных{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Боковая панель -->
+        <div class="col-md-3">
+            <div class="list-group shadow-sm">
+                <a href="/students/dashboard/" class="list-group-item list-group-item-action">
+                    Личный кабинет
+                </a>
+                <a href="/students/analysis/" class="list-group-item list-group-item-action active">
+                    Анализ данных
+                </a>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="col-md-9">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0">Анализ данных студентов</h2>
+                </div>
+                <div class="card-body">
+                    <p>Здесь вы можете видеть общую статистику по курсам и оценкам студентов.</p>
+                    
+                    <!-- Таблица среднего балла -->
+                    <h3 class="h5 mt-4">Средний балл по каждому курсу</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered mt-3">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Курс</th>
+                                    <th>Средний балл</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for course in courses_with_avg %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ course.name }}</td>
+                                    <td>{{ course.avg_grade|floatformat:2|default:"Нет данных" }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="3" class="text-center">Нет данных для отображения</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

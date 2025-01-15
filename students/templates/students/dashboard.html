@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Боковая панель -->
+    <div class="col-md-3">
+        <div class="list-group">
+            <a href="/students/dashboard/" class="list-group-item list-group-item-action active">
+                Личный кабинет
+            </a>
+            <a href="/students/analysis/" class="list-group-item list-group-item-action">
+                Анализ данных
+            </a>
+        </div>
+    </div>
+    <!-- Основной контент -->
+    <div class="col-md-9">
+        <h1>Добро пожаловать, {{ student.full_name }}</h1>
+        <p><strong>Дата рождения:</strong> {{ student.date_of_birth }}</p>
+        <h3>Ваши курсы:</h3>
+        <ul class="list-group">
+            {% for grade in grades %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between w-100">
+                        <span>{{ grade.course.name }}</span>
+                        <span class="badge bg-primary rounded-pill">{{ grade.grade }}</span>
+                    </div>
+                    <!-- Кнопка перехода на курс -->
+                    <a href="/students/courses/{{ grade.course.id }}/" class="btn btn-info btn-sm ms-3">Перейти на курс</a>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        
+    </div>
+</div>
+{% endblock %}
